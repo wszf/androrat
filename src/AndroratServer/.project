@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>AndroratServer</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>INOUT_LIBRARY</name>
+			<type>2</type>
+			<locationURI>INOUT_LIBRARY</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>INOUT_LIBRARY</name>
+			<value>$%7BPARENT-1-PROJECT_LOC%7D/InOut</value>
+		</variable>
+	</variableList>
+</projectDescription>
