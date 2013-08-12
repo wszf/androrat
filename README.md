@@ -64,3 +64,8 @@ The two screenshots below shows two others tabs for two functionalities which ar
 ![Contacts](https://raw.github.com/packetforger/androrat/master/doc/contact.png)
 
 ![GPS tab](https://raw.github.com/packetforger/androrat/master/doc/gps.png)
+
+* You need to edit /src/Androrat/src/my/app/client/LauncherActivity.java before compiling the APK.
+* This is where you hardcode the listeners IP and Port. You can use an IP, or a domain name like a dyndns.
+
+Note: I am not the author of this software, it is forked and slightly edited. I may make changes to it to fix bugs as I go along, but I am not a java programmer at heart, and only have this here for my own use in testing.
