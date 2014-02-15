@@ -14,17 +14,10 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>INOUT_LIBRARY</name>
-			<type>2</type>
-			<locationURI>INOUT_LIBRARY</locationURI>
-		</link>
-	</linkedResources>
 	<variableList>
 		<variable>
 			<name>INOUT_LIBRARY</name>
-			<value>$%7BPARENT-1-PROJECT_LOC%7D/InOut</value>
+			<value>$%7BINOUT_LIBRARY%7D</value>
 		</variable>
 	</variableList>
 </projectDescription>

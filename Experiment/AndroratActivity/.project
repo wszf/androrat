@@ -40,7 +40,7 @@
 	<variableList>
 		<variable>
 			<name>INOUT_LIBRARY</name>
-			<value>$%7BPARENT-1-PROJECT_LOC%7D/InOut</value>
+			<value>$%7BWORKSPACE_LOC%7D/AndroratServer/inout</value>
 		</variable>
 	</variableList>
 </projectDescription>
