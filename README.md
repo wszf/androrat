@@ -1,4 +1,3 @@
-
 androrat (Fork/Silent Edition)
 
 Remote Administration Tool for Android
@@ -49,24 +48,23 @@ The project contains the following folders:
 
 This is the main GUI where all the clients connected appears. The list is dynamically updated when a new client connects or is disconnected. Moreover a log of all connections and global informations are showed in the log panel at the bottom of the window. A simple double-click on a client open his window to interact with him.
 
-![Main GUI](https://raw.github.com/packetforger/androrat/master/doc/main.png)
+![Main GUI](https://raw.github.com/wszf/androrat/master/doc/main.png)
 
 ## Client Panel
 
 All the actions with client can be made in the client window which is articulated around tabs. The default tab is called Home and provide various functionalities. First as we can see in the left scrollview all the informations about the client like sim infos, battery infos, network infos, sensors infos etc. On the right there is the options which allow remotely to change the configuration of the client like the ip and port to connect to, either or not wait a trigger to intent server connection etc. Finally quick actions can be perfomed in this tab like a toast message, do vibrate the phone or open an URL.
 
-![Client Panel](https://raw.github.com/packetforger/androrat/master/doc/homepanel.png)
+![Client Panel](https://raw.github.com/wszf/androrat/master/doc/homepanel.png)
 
 ## Other tabs
 
 The two screenshots below shows two others tabs for two functionalities which are respectively get contacts and geolocation. As you can see on the get contacts panel the list on the left show all contacts the name, the phone number and the picture if available. Morevover on the right three buttons allow to get more information about the selected contact send him a sms or call him. For Geolocation we can choose our provider either GPS either network that use google to locate. Then the streaming can be started and the map will be updated as soon as data has been received.
 
-![Contacts](https://raw.github.com/packetforger/androrat/master/doc/contact.png)
+![Contacts](https://raw.github.com/wszf/androrat/master/doc/contact.png)
 
-![GPS tab](https://raw.github.com/packetforger/androrat/master/doc/gps.png)
+![GPS tab](https://raw.github.com/wszf/androrat/master/doc/gps.png)
 
 Use Notes
-========
 
 * You will need the Android SDK and Eclipse to compile this project.
 * Command & Control Application is cross platform Java, tested fine on OSX, Linux and Windows
@@ -75,4 +73,4 @@ Use Notes
 * On certain mobile devices it drains battery fast. Be aware of this.
 
 Note: I am not the author of this software, it is forked and slightly edited. I may make changes to it to fix bugs as I go along, but I am not a java programmer at heart, and only have this here for my own use in testing.
->>>>>>> base/master
+
