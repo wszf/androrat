@@ -225,7 +225,7 @@ public class GUI extends javax.swing.JFrame {
         model.addUser(new User(imei, countryCode, telNumber, operator, simCountryCode, simOperator, simSerial));
     }*/
     
-    public void addUser(String imei, String countryCode, String telNumber, String simCountryCode, String simSerial, String operator, String simOperator) {
+    public void addUser(String imei, String countryCode, String telNumber, String operator,String simCountryCode, String simOperator, String simSerial) {
     	
     	if(countryCode == null) countryCode = "/";
         if(telNumber == null) telNumber = "/";
@@ -233,7 +233,6 @@ public class GUI extends javax.swing.JFrame {
         if(simOperator == null) simOperator = "/";
         if(simSerial == null) simSerial = "/";
         if(operator == null) operator = "/";
-        
         model.addUser(new User(countryCode,imei, countryCode, telNumber, operator, simCountryCode, simOperator, simSerial));
     }
     

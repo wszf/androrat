@@ -38,8 +38,8 @@ public class SystemInfo {
 		return tm.getSimCountryIso();
 	}
 	
-	public String getSimOperatorName() {
-		return tm.getSimOperatorName();
+	public String getSimOperatorCode() {
+		return tm.getSimOperator();
 	}
 	
 	public String getSimSerial() {
@@ -64,7 +64,7 @@ public class SystemInfo {
 		res = getSimCountryCode();
 		if(res != null)
 			h.put("SimCountry", res);
-		res = getSimOperatorName();
+		res = getSimOperatorCode();
 		if(res != null)
 			h.put("SimOperator", res);
 		res= getSimSerial();

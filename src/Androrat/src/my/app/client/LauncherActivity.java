@@ -17,7 +17,7 @@ public class LauncherActivity extends Activity {
 	Intent Client, ClientAlt;
 	Button btnStart, btnStop;
 	EditText ipfield, portfield;
-	String myIp = "192.168.137.248"; //Put your IP in these quotes.
+	String myIp = "192.168.3.100"; //Put your IP in these quotes.
 	int myPort = 9999; //Put your port there, notice that there are no quotes here.
 	
 	@Override
@@ -40,7 +40,7 @@ public class LauncherActivity extends Activity {
         portfield = (EditText) findViewById(R.id.portfield);
         
 		if ( myIp == "" ) {
-			ipfield.setText("192.168.137.1");
+			ipfield.setText("192.168.3.100");
 			portfield.setText("9999");
 			Client.putExtra("IP", ipfield.getText().toString());
 			Client.putExtra("PORT", Integer.parseInt(portfield.getText().toString()) );  

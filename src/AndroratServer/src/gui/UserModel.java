@@ -2,10 +2,12 @@ package gui;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
+
 import javax.swing.table.AbstractTableModel;
 
 public class UserModel extends AbstractTableModel {
-    
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.messages"); //$NON-NLS-1$
 	/*
     private final List<User> users = new ArrayList<User>();
     private final String[] headers = {"IMEI", "Localisation", "Num�ro tel", "Op�rateur", "Pays SIM", "Op�rateur SIM", "Serial SIM"};
@@ -66,7 +68,7 @@ public class UserModel extends AbstractTableModel {
     }
     */
     private final List<User> users = new ArrayList<User>();
-    private final String[] headers = {"Flag","IMEI", "Location", "Phone Number", "Operator", "Country SIM", "Operator SIM", "Serial SIM"};
+    private final String[] headers = {BUNDLE.getString("Flag"),"IMEI", BUNDLE.getString("Location"), BUNDLE.getString("Phone-Number"), BUNDLE.getString("Operator"), BUNDLE.getString("Country-SIM"), BUNDLE.getString("Operator-SIM"), BUNDLE.getString("Serial-SIM")};
 
     public UserModel() {
         super();
