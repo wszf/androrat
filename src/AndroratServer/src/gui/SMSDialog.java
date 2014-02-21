@@ -16,8 +16,10 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ResourceBundle;
 
 public class SMSDialog extends JDialog {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.messages"); //$NON-NLS-1$
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField textField;
@@ -34,12 +36,12 @@ public class SMSDialog extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		
-		JLabel lblTargetCellNumber = new JLabel("Target cell number :");
+		JLabel lblTargetCellNumber = new JLabel(BUNDLE.getString("Target-cell-number")); //$NON-NLS-1$
 		
 		textField = new JTextField();
 		textField.setColumns(10);
 		
-		JLabel lblSmsText = new JLabel("SMS Text :");
+		JLabel lblSmsText = new JLabel(BUNDLE.getString("SMS-Text")); //$NON-NLS-1$
 		
 		textPane = new JTextPane();
 		GroupLayout gl_contentPanel = new GroupLayout(contentPanel);

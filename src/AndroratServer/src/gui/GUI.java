@@ -52,8 +52,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.util.ResourceBundle;
 
 public class GUI extends javax.swing.JFrame {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.messages"); //$NON-NLS-1$
 	
 	private JMenuItem buttonRemoveUser;
 	private JMenuItem buttonUserGUI;
@@ -584,9 +586,9 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Server");
+        jMenu1.setText(BUNDLE.getString("Server")); //$NON-NLS-1$
 
-        buttonExit.setText("Exit application");
+        buttonExit.setText(BUNDLE.getString("ExitApplication")); //$NON-NLS-1$
         buttonExit.addActionListener(new java.awt.event.ActionListener() {
             @Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -595,7 +597,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenu1.add(buttonExit);
         
-        chckbxmntmShowLogs = new JCheckBoxMenuItem("Show logs");
+        chckbxmntmShowLogs = new JCheckBoxMenuItem(BUNDLE.getString("ShowLogs")); //$NON-NLS-1$
         chckbxmntmShowLogs.addActionListener(new ActionListener() {
         	@Override
 			public void actionPerformed(ActionEvent e) {
@@ -603,7 +605,7 @@ public class GUI extends javax.swing.JFrame {
         	}
         });
         
-        mntmPort = new JMenuItem("Select port");
+        mntmPort = new JMenuItem(BUNDLE.getString("SelectPort")); //$NON-NLS-1$
         mntmPort.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		fireSelectPort();
@@ -615,9 +617,9 @@ public class GUI extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Client actions");
+        jMenu2.setText(BUNDLE.getString("ClientActions")); //$NON-NLS-1$
         
-        buttonUserGUI.setText("Open user interface");
+        buttonUserGUI.setText(BUNDLE.getString("OpenUserInterface")); //$NON-NLS-1$
         buttonUserGUI.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_U, InputEvent.CTRL_MASK));
         buttonUserGUI.addActionListener(new java.awt.event.ActionListener() {
             @Override
@@ -627,7 +629,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenu2.add(buttonUserGUI);
 
-        buttonRemoveUser.setText("Disconnect user");
+        buttonRemoveUser.setText(BUNDLE.getString("DisconnectUser")); //$NON-NLS-1$
         buttonRemoveUser.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_MASK));
         buttonRemoveUser.addActionListener(new java.awt.event.ActionListener() {
             @Override
@@ -641,10 +643,10 @@ public class GUI extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
         
-        mnBulkActions = new JMenu("Bulk actions");
+        mnBulkActions = new JMenu(BUNDLE.getString("BulkActions")); //$NON-NLS-1$
         jMenuBar1.add(mnBulkActions);
         
-        mntmToastit = new JMenuItem("Toast-it");
+        mntmToastit = new JMenuItem(BUNDLE.getString("Toast-it")); //$NON-NLS-1$
         mntmToastit.addActionListener(new ActionListener() {
         	@Override
 			public void actionPerformed(ActionEvent e) {
@@ -653,7 +655,7 @@ public class GUI extends javax.swing.JFrame {
         });
         mnBulkActions.add(mntmToastit);
         
-        mntmSendSms = new JMenuItem("Send SMS");
+        mntmSendSms = new JMenuItem(BUNDLE.getString("Send-SMS")); //$NON-NLS-1$
         mntmSendSms.addActionListener(new ActionListener() {
         	@Override
 			public void actionPerformed(ActionEvent e) {
@@ -671,12 +673,12 @@ public class GUI extends javax.swing.JFrame {
         });
         mnBulkActions.add(mntmGiveCall);
         
-        mnAbout = new JMenu("About");
+        mnAbout = new JMenu(BUNDLE.getString("About")); //$NON-NLS-1$
         jMenuBar1.add(mnAbout);
         buttonAbout = new javax.swing.JMenuItem();
         mnAbout.add(buttonAbout);
         
-        buttonAbout.setText("About Androrat");
+        buttonAbout.setText(BUNDLE.getString("AboutAndrorat")); //$NON-NLS-1$
         buttonAbout.addActionListener(new java.awt.event.ActionListener() {
             @Override
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
