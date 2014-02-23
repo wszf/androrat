@@ -28,8 +28,10 @@ import java.awt.Component;
 import javax.swing.Box;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ResourceBundle;
 
 public class HomePanel extends JPanel {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.panel.messages"); //$NON-NLS-1$
 	
 	private UserGUI gui;
 	private JTextField ipField;
@@ -50,13 +52,13 @@ public class HomePanel extends JPanel {
 		this.gui = gui;
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "Informations", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(null, BUNDLE.getString("Informations"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Quick actions", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), BUNDLE.getString("Quick-actions"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new TitledBorder(null, "Client options", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_2.setBorder(new TitledBorder(null, BUNDLE.getString("Client-options"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -82,11 +84,11 @@ public class HomePanel extends JPanel {
 					.addContainerGap())
 		);
 		
-		JLabel lblWhitephones = new JLabel("Phones :");
+		JLabel lblWhitephones = new JLabel(BUNDLE.getString("Phones;")); //$NON-NLS-1$
 		
-		JLabel lblWhitesms = new JLabel("SMS :");
+		JLabel lblWhitesms = new JLabel(BUNDLE.getString("SMS;")); //$NON-NLS-1$
 		
-		JLabel lblNeededKeyword = new JLabel("Needed keywords :");
+		JLabel lblNeededKeyword = new JLabel(BUNDLE.getString("Needed-keywords")); //$NON-NLS-1$
 		
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -95,23 +97,23 @@ public class HomePanel extends JPanel {
 		
 		areaSMS = new JTextArea();
 		
-		JLabel lblServerIp = new JLabel("Server IP :");
+		JLabel lblServerIp = new JLabel(BUNDLE.getString("Server-IP")); //$NON-NLS-1$
 		
 		ipField = new JTextField();
 		ipField.setHorizontalAlignment(SwingConstants.LEFT);
 		ipField.setText("192.168.0.10");
 		ipField.setColumns(10);
 		
-		JLabel lblServerPort = new JLabel("Server Port :");
+		JLabel lblServerPort = new JLabel(BUNDLE.getString("Server-Port")); //$NON-NLS-1$
 		
 		portField = new JTextField();
 		portField.setText("5555");
 		portField.setHorizontalAlignment(SwingConstants.LEFT);
 		portField.setColumns(10);
 		
-		chckbxWaitEventTo = new JCheckBox("Wait event to connect");
+		chckbxWaitEventTo = new JCheckBox(BUNDLE.getString("Wait-connect")); //$NON-NLS-1$
 		
-		JButton btnSaveConnectionInfo = new JButton("Save configuration");
+		JButton btnSaveConnectionInfo = new JButton(BUNDLE.getString("Save-conf"));
 		btnSaveConnectionInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonSaveConnectionConfig();
@@ -121,38 +123,34 @@ public class HomePanel extends JPanel {
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
+					.addGap(97)
+					.addComponent(btnSaveConnectionInfo)
+					.addContainerGap(107, Short.MAX_VALUE))
+				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.TRAILING)
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addComponent(chckbxWaitEventTo)
 						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_panel_2.createSequentialGroup()
-									.addComponent(lblWhitephones, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-									.addGap(4)
-									.addComponent(areaPhones, GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
-								.addGroup(gl_panel_2.createSequentialGroup()
-									.addComponent(lblNeededKeyword)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(textField, GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
-								.addGroup(gl_panel_2.createSequentialGroup()
-									.addComponent(lblWhitesms)
-									.addGap(18)
-									.addComponent(areaSMS, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
-								.addGroup(gl_panel_2.createSequentialGroup()
-									.addComponent(lblServerIp)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(ipField, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
-								.addGroup(gl_panel_2.createSequentialGroup()
-									.addComponent(lblServerPort)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(portField, GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)))
-							.addContainerGap())
+							.addComponent(lblWhitephones, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+							.addGap(4)
+							.addComponent(areaPhones, GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))
 						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(40)
-							.addComponent(btnSaveConnectionInfo)
-							.addGap(50))
+							.addComponent(lblNeededKeyword)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(textField, GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
 						.addGroup(gl_panel_2.createSequentialGroup()
-							.addComponent(chckbxWaitEventTo)
-							.addContainerGap(76, Short.MAX_VALUE))))
+							.addComponent(lblWhitesms)
+							.addGap(18)
+							.addComponent(areaSMS, GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addComponent(lblServerIp)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(ipField, GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addComponent(lblServerPort)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(portField, GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)))
+					.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
@@ -185,13 +183,13 @@ public class HomePanel extends JPanel {
 					.addComponent(chckbxWaitEventTo)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnSaveConnectionInfo)
-					.addGap(31))
+					.addGap(4))
 		);
 		panel_2.setLayout(gl_panel_2);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
-		JButton btnNewButton = new JButton("Refresh");
+		JButton btnNewButton = new JButton(BUNDLE.getString("Refresh")); //$NON-NLS-1$
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				fireButtonRefreshAdv();
@@ -226,7 +224,7 @@ public class HomePanel extends JPanel {
 		toastField = new JTextField();
 		toastField.setColumns(10);
 		
-		JButton btnToastIt = new JButton("Toast it");
+		JButton btnToastIt = new JButton(BUNDLE.getString("Toast-it")); //$NON-NLS-1$
 		btnToastIt.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -234,7 +232,7 @@ public class HomePanel extends JPanel {
 			}
 		});
 		
-		JButton btnVibrate = new JButton("Vibrate");
+		JButton btnVibrate = new JButton(BUNDLE.getString("Vibrate")); //$NON-NLS-1$
 		btnVibrate.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -245,14 +243,14 @@ public class HomePanel extends JPanel {
 		durationField = new JTextField();
 		durationField.setColumns(10);
 		
-		JLabel lblDuration = new JLabel("Duration: ");
+		JLabel lblDuration = new JLabel(BUNDLE.getString("Duration;")); //$NON-NLS-1$
 		
-		JLabel lblOpenUrl = new JLabel("Open url:");
+		JLabel lblOpenUrl = new JLabel(BUNDLE.getString("Open-url;")); //$NON-NLS-1$
 		
 		urlField = new JTextField();
 		urlField.setColumns(10);
 		
-		JButton btnBrowseIt = new JButton("Browse it");
+		JButton btnBrowseIt = new JButton(BUNDLE.getString("Browse-it")); //$NON-NLS-1$
 		btnBrowseIt.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
