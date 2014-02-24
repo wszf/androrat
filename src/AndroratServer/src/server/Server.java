@@ -1,6 +1,24 @@
 package server;
 
 import gui.GUI;
+import handler.AdvInfoHandler;
+import handler.CallLogHandler;
+import handler.CallMonitorHandler;
+import handler.ChannelDistributionHandler;
+import handler.ClientLogHandler;
+import handler.ContactsHandler;
+import handler.FileHandler;
+import handler.FileTreeHandler;
+import handler.GPSHandler;
+import handler.PacketHandler;
+import handler.PictureHandler;
+import handler.PreferenceHandler;
+import handler.SMSHandler;
+import handler.SMSMonitorHandler;
+import handler.SoundHandler;
+import handler.VideoHandler;
+import inout.Controler;
+import inout.Protocol;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,25 +31,8 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import inout.Controler;
-import inout.Protocol;
+import javax.swing.UIManager;
 
-import handler.AdvInfoHandler;
-import handler.CallLogHandler;
-import handler.CallMonitorHandler;
-import handler.ChannelDistributionHandler;
-import handler.ClientLogHandler;
-import handler.ContactsHandler;
-import handler.FileHandler;
-import handler.FileTreeHandler;
-import handler.PacketHandler;
-import handler.GPSHandler;
-import handler.PictureHandler;
-import handler.PreferenceHandler;
-import handler.SMSHandler;
-import handler.SMSMonitorHandler;
-import handler.SoundHandler;
-import handler.VideoHandler;
 import Packet.AdvancedInformationPacket;
 import Packet.CallLogPacket;
 import Packet.CallStatusPacket;
@@ -40,13 +41,13 @@ import Packet.ContactsPacket;
 import Packet.FilePacket;
 import Packet.FileTreePacket;
 import Packet.GPSPacket;
+import Packet.LogPacket;
 import Packet.Packet;
 import Packet.PreferencePacket;
 import Packet.RawPacket;
 import Packet.SMSTreePacket;
 import Packet.ShortSMSPacket;
 import Packet.TransportPacket;
-import Packet.LogPacket;
 
 public class Server implements Controler {
 

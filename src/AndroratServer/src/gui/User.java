@@ -1,6 +1,5 @@
 package gui;
 
-import javax.swing.ImageIcon;
 
 /*
 public class User {

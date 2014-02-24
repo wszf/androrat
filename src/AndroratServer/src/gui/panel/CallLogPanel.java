@@ -2,32 +2,36 @@ package gui.panel;
 
 import gui.UserGUI;
 
-import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Color;
-import javax.swing.JScrollPane;
-import javax.swing.border.TitledBorder;
-import javax.swing.text.MaskFormatter;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JTextField;
-import javax.swing.JFormattedTextField;
-import javax.swing.JButton;
-import javax.swing.UIManager;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import Packet.CallPacket;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
+import javax.swing.text.MaskFormatter;
+
+import Packet.CallPacket;
+import java.util.ResourceBundle;
 
 public class CallLogPanel extends JPanel {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.panel.messages"); //$NON-NLS-1$
 	
 	public static Color IN_CALL = new Color(14,92,7);
 	public static Color MISSED_IN_CALL = Color.red;
@@ -49,15 +53,15 @@ public class CallLogPanel extends JPanel {
 	public CallLogPanel(UserGUI gui) {
 		this.gui = gui;
 		
-		JLabel lblTypes = new JLabel("Types :");
+		JLabel lblTypes = new JLabel(BUNDLE.getString("Types;")); //$NON-NLS-1$
 		
-		JLabel lblIncomingCall = new JLabel("received call");
+		JLabel lblIncomingCall = new JLabel(BUNDLE.getString("received-call")); //$NON-NLS-1$
 		lblIncomingCall.setForeground(IN_CALL);
 		
-		JLabel lblOutgoingCall = new JLabel("outgoing call");
+		JLabel lblOutgoingCall = new JLabel(BUNDLE.getString("outgoing-call")); //$NON-NLS-1$
 		lblOutgoingCall.setForeground(OUT_CALL);
 		
-		JLabel lblMissedIncomingCall = new JLabel("missed call");
+		JLabel lblMissedIncomingCall = new JLabel(BUNDLE.getString("missed-call")); //$NON-NLS-1$
 		lblMissedIncomingCall.setForeground(MISSED_IN_CALL);
 		
 		JSplitPane splitPane = new JSplitPane();
@@ -103,27 +107,27 @@ public class CallLogPanel extends JPanel {
 		
 		JPanel panel = new JPanel();
 		splitPane.setRightComponent(panel);
-		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Optional filters", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), BUNDLE.getString("Optional-filters"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
-		JLabel lblTypeOfCall = new JLabel("Type of call :");
+		JLabel lblTypeOfCall = new JLabel(BUNDLE.getString("Type-of-call;")); //$NON-NLS-1$
 		
 		comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"All calls", "Received calls", "Sent calls", "Missed calls"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {BUNDLE.getString("All-calls"),BUNDLE.getString("received-call"), BUNDLE.getString("outgoing-call"), BUNDLE.getString("missed-call")}));
 		
-		JLabel lblPhoneNumber = new JLabel("Phone number :");
+		JLabel lblPhoneNumber = new JLabel(BUNDLE.getString("Phone-number;")); //$NON-NLS-1$
 		
 		phoneNumberField = new JTextField();
 		phoneNumberField.setColumns(10);
 		
-		JLabel lblMinDate = new JLabel("Not before (dd/mm/yyyy)  :");
+		JLabel lblMinDate = new JLabel(BUNDLE.getString("Not-before;")); //$NON-NLS-1$
 		
 		formattedMinDate = new JFormattedTextField(createFormatter("**/**/****"));
 		
-		JLabel lblNotAfter = new JLabel("Not after");
+		JLabel lblNotAfter = new JLabel(BUNDLE.getString("Not-after")); //$NON-NLS-1$
 		
 		formattedMaxDate = new JFormattedTextField(createFormatter("**/**/****"));
 		
-		JLabel lblDuration = new JLabel("Min duration :");
+		JLabel lblDuration = new JLabel(BUNDLE.getString("Min-duration;")); //$NON-NLS-1$
 		
 		JLabel lblD = new JLabel("d >");
 		
@@ -135,7 +139,7 @@ public class CallLogPanel extends JPanel {
 		maxDurationField = new JTextField();
 		maxDurationField.setColumns(10);
 		
-		JButton btnGetCallLogs = new JButton("Get call logs");
+		JButton btnGetCallLogs = new JButton(BUNDLE.getString("Get-call-logs")); //$NON-NLS-1$
 		btnGetCallLogs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireGetCallLogs();

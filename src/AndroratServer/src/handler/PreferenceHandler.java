@@ -1,9 +1,9 @@
 package handler;
 
+import gui.GUI;
 import server.Server;
 import Packet.Packet;
 import Packet.PreferencePacket;
-import gui.GUI;
 
 public class PreferenceHandler  implements PacketHandler {
 	

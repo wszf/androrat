@@ -2,7 +2,6 @@ package handler;
 
 import gui.GUI;
 import server.Server;
-
 import Packet.GPSPacket;
 import Packet.Packet;
 

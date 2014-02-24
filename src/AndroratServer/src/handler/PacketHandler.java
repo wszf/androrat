@@ -2,7 +2,6 @@ package handler;
 
 
 import server.Server;
-import inout.Controler;
 import Packet.Packet;
 
 public interface PacketHandler 

@@ -1,9 +1,9 @@
 package handler;
 
+import gui.GUI;
 import server.Server;
 import Packet.AdvancedInformationPacket;
 import Packet.Packet;
-import gui.GUI;
 
 public class AdvInfoHandler implements PacketHandler {
 

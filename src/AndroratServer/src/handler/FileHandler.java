@@ -1,6 +1,7 @@
 package handler;
 
-import java.io.DataOutputStream;
+import gui.GUI;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -10,8 +11,6 @@ import java.util.HashMap;
 import server.Server;
 import Packet.FilePacket;
 import Packet.Packet;
-import Packet.PreferencePacket;
-import gui.GUI;
 
 public class FileHandler implements PacketHandler {
 	

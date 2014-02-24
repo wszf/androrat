@@ -1,13 +1,19 @@
 package gui;
 
+import gui.panel.ColorPane;
 import inout.Protocol;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -16,43 +22,34 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.ResourceBundle;
+
 import javax.imageio.ImageIO;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane; 
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import javax.swing.JTable;
 import javax.swing.KeyStroke;
 import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
-
-import Packet.AdvancedInformationPacket;
-import Packet.CallPacket;
-import Packet.PreferencePacket;
-import Packet.SMSPacket;
+import javax.swing.table.DefaultTableCellRenderer;
 
 import server.Server;
 import utils.Contact;
 import utils.EncoderHelper;
 import utils.MyFile;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.GroupLayout;
-import javax.swing.JSplitPane;
-import gui.panel.ColorPane;
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableCellEditor;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.util.ResourceBundle;
+import Packet.AdvancedInformationPacket;
+import Packet.CallPacket;
+import Packet.PreferencePacket;
+import Packet.SMSPacket;
 
 public class GUI extends javax.swing.JFrame {
 	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.messages"); //$NON-NLS-1$

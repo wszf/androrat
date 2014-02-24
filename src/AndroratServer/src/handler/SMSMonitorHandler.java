@@ -1,10 +1,9 @@
 package handler;
 
+import gui.GUI;
 import server.Server;
-import Packet.CallStatusPacket;
 import Packet.Packet;
 import Packet.ShortSMSPacket;
-import gui.GUI;
 
 public class SMSMonitorHandler implements PacketHandler {
 	

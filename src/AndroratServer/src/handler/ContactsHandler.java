@@ -1,9 +1,9 @@
 package handler;
 
+import gui.GUI;
 import server.Server;
 import Packet.ContactsPacket;
 import Packet.Packet;
-import gui.GUI;
 
 public class ContactsHandler implements PacketHandler {
 	

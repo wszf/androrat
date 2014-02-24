@@ -11,43 +11,40 @@ import gui.panel.PicturePanel;
 import gui.panel.SMSLogPanel;
 import gui.panel.SoundPanel;
 import gui.panel.VideoPanel;
-
 import inout.Protocol;
-import utils.Contact;
-import utils.MyFile;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JMenuBar;
-import javax.swing.JOptionPane;
-import javax.swing.JTabbedPane;
-import javax.swing.BoxLayout;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import javax.swing.KeyStroke;
-
-import Packet.AdvancedInformationPacket;
-import Packet.CallPacket;
-import Packet.SMSPacket;
-
-import java.awt.event.KeyEvent;
-import java.awt.event.InputEvent;
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
-import javax.swing.JSplitPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import java.util.ResourceBundle;
+
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTabbedPane;
+import javax.swing.KeyStroke;
+import javax.swing.border.EmptyBorder;
+
+import utils.Contact;
+import utils.MyFile;
+import Packet.AdvancedInformationPacket;
+import Packet.CallPacket;
+import Packet.SMSPacket;
 
 public class UserGUI extends JFrame implements WindowListener {
 	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.messages"); //$NON-NLS-1$
@@ -389,7 +386,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonCallLogs() {
 		if(callLogPanel == null) {
 			callLogPanel = new CallLogPanel(this);
-			tabbedPane.addTab("Call logs", callLogPanel);
+			tabbedPane.addTab(BUNDLE.getString("Call-logs"), callLogPanel);
 		}
 		tabbedPane.setSelectedComponent(callLogPanel);
 	}
@@ -657,7 +654,7 @@ public class UserGUI extends JFrame implements WindowListener {
 		splitPane.setLeftComponent(tabbedPane);
 		
 		homePanel = new HomePanel(this);
-		tabbedPane.addTab("Home", null, homePanel, null);
+		tabbedPane.addTab(BUNDLE.getString("Home"), null, homePanel, null);
 		
 		//tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		//contentPane.add(tabbedPane);

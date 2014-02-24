@@ -1,11 +1,10 @@
 package handler;
 
-import java.io.IOException;
+import inout.Protocol;
+
 import java.util.ArrayList;
 
 import Packet.TransportPacket;
-
-import inout.Protocol;
 
 
 /*

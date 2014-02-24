@@ -1,20 +1,18 @@
 package server;
 
+import gui.GUI;
+import in.Demux;
+import in.Receiver;
+import inout.Protocol;
+
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.net.SocketException;
 import java.nio.ByteBuffer;
-import java.nio.channels.SocketChannel;
 
-import gui.GUI;
-import inout.Protocol;
+import out.Mux;
 import Packet.CommandPacket;
 import Packet.Packet;
-
-import in.Demux;
-import in.Receiver;
-import out.Mux;
 
 public class ClientHandler extends Thread {
 	private String imei;

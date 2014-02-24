@@ -1,9 +1,9 @@
 package handler;
 
+import gui.GUI;
 import server.Server;
 import Packet.Packet;
 import Packet.RawPacket;
-import gui.GUI;
 
 public class PictureHandler implements PacketHandler {
 	

@@ -1,12 +1,9 @@
 package handler;
 
-import java.util.ArrayList;
-
+import gui.GUI;
 import server.Server;
 import Packet.Packet;
-import Packet.SMSPacket;
 import Packet.SMSTreePacket;
-import gui.GUI;
 
 public class SMSHandler implements PacketHandler {
 
