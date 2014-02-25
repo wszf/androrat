@@ -28,8 +28,10 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
 import utils.MyFile;
+import java.util.ResourceBundle;
 
 public class FileTreePanel extends JPanel {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.panel.messages"); //$NON-NLS-1$
 
 	private JTree tree;
 	private DefaultMutableTreeNode trunk;
@@ -87,17 +89,17 @@ public class FileTreePanel extends JPanel {
 
 		JPanel panel = new JPanel();
 		splitPane.setRightComponent(panel);
-		panel.setBorder(new TitledBorder(null, "Informations",
+		panel.setBorder(new TitledBorder(null, BUNDLE.getString("Informations"),
 				TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
-		JButton btnTreeRequest = new JButton("Get FileTree");
+		JButton btnTreeRequest = new JButton(BUNDLE.getString("Get-FileTree")); //$NON-NLS-1$
 		btnTreeRequest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonRequestTree();
 			}
 		});
 
-		btnDownload = new JButton("Download File");
+		btnDownload = new JButton(BUNDLE.getString("Download-File")); //$NON-NLS-1$
 		btnDownload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireButtonDownload();
@@ -105,23 +107,23 @@ public class FileTreePanel extends JPanel {
 		});
 		btnDownload.setEnabled(false);
 
-		JLabel lblName = new JLabel("Name :");
+		JLabel lblName = new JLabel(BUNDLE.getString("Name;")); //$NON-NLS-1$
 
 		lblValname = new JLabel("val_name");
 
-		JLabel lblSize = new JLabel("Size :");
+		JLabel lblSize = new JLabel(BUNDLE.getString("Size;")); //$NON-NLS-1$
 
 		lblValsize = new JLabel("val_size");
 
-		JLabel lblHidden = new JLabel("Hidden :");
+		JLabel lblHidden = new JLabel(BUNDLE.getString("Hidden;")); //$NON-NLS-1$
 
 		lblValhidden = new JLabel("val_hidden");
 
-		JLabel lblAccess = new JLabel("Access :");
+		JLabel lblAccess = new JLabel(BUNDLE.getString("Access;")); //$NON-NLS-1$
 
 		lblValaccess = new JLabel("val_access");
 
-		JLabel lblLastModification = new JLabel("Last modification :");
+		JLabel lblLastModification = new JLabel(BUNDLE.getString("Last-modification;")); //$NON-NLS-1$
 
 		lblVallastmodif = new JLabel("val_last_modif");
 		
@@ -129,7 +131,7 @@ public class FileTreePanel extends JPanel {
 		txtDir.setText("download/");
 		txtDir.setColumns(10);
 		
-		JLabel lblDownloadDirectory = new JLabel("Download directory :");
+		JLabel lblDownloadDirectory = new JLabel(BUNDLE.getString("Download-directory;")); //$NON-NLS-1$
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
