@@ -32,8 +32,10 @@ import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 
 import utils.Contact;
+import java.util.ResourceBundle;
 
 public class ContactPanel extends JPanel {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.panel.messages"); //$NON-NLS-1$
 
 	private JList list;
 	private JLabel lblValId;
@@ -90,10 +92,10 @@ public class ContactPanel extends JPanel {
 		splitPane.setRightComponent(panel_2);
 
 		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "Informations",
+		panel.setBorder(new TitledBorder(null, BUNDLE.getString("Informations"),
 				TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
-		btnCall = new JButton("Call");
+		btnCall = new JButton(BUNDLE.getString("Call")); //$NON-NLS-1$
 		btnCall.setEnabled(false);
 		btnCall.addActionListener(new ActionListener() {
 			@Override
@@ -102,7 +104,7 @@ public class ContactPanel extends JPanel {
 			}
 		});
 
-		btnSms = new JButton("SMS");
+		btnSms = new JButton(BUNDLE.getString("SMS")); //$NON-NLS-1$
 		btnSms.setEnabled(false);
 		btnSms.addActionListener(new ActionListener() {
 			@Override
@@ -111,7 +113,7 @@ public class ContactPanel extends JPanel {
 			}
 		});
 
-		btnMoreInformations = new JButton("More informations");
+		btnMoreInformations = new JButton(BUNDLE.getString("More-informations")); //$NON-NLS-1$
 		btnMoreInformations.setEnabled(false);
 		btnMoreInformations.addActionListener(new ActionListener() {
 			@Override
@@ -124,15 +126,15 @@ public class ContactPanel extends JPanel {
 
 		lblValId = new JLabel("n/a");
 
-		JLabel lblName = new JLabel("Name :");
+		JLabel lblName = new JLabel(BUNDLE.getString("Name;")); //$NON-NLS-1$
 
 		lblValname = new JLabel("n/a");
 
-		JLabel lblNumber = new JLabel("Number :");
+		JLabel lblNumber = new JLabel(BUNDLE.getString("Number;")); //$NON-NLS-1$
 
 		lblValnumber = new JLabel("n/a");
 
-		JLabel lblAddress = new JLabel("Address :");
+		JLabel lblAddress = new JLabel(BUNDLE.getString("Address;")); //$NON-NLS-1$
 
 		txtrValaddr = new JTextArea();
 		txtrValaddr.setText("n/a");
@@ -251,10 +253,10 @@ public class ContactPanel extends JPanel {
 		panel.setLayout(gl_panel);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "General options",
+		panel_1.setBorder(new TitledBorder(null, BUNDLE.getString("General-options"),
 				TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
-		JButton btnRefreshList = new JButton("Refresh list");
+		JButton btnRefreshList = new JButton(BUNDLE.getString("Refresh-list")); //$NON-NLS-1$
 		btnRefreshList.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
