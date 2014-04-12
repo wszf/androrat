@@ -160,7 +160,7 @@ public class GUI extends javax.swing.JFrame {
         	}
         	
         } else {
-        	JOptionPane.showMessageDialog(this,"No client selected !\nPlease select one client.","No selection",JOptionPane.ERROR_MESSAGE);
+        	JOptionPane.showMessageDialog(this,BUNDLE.getString("not-found-content"),BUNDLE.getString("not-found-title"),JOptionPane.ERROR_MESSAGE);
         }
     }
 

