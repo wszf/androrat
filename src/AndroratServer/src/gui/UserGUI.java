@@ -370,7 +370,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonTakePicture() {
 		if(picturePanel == null) {
 			picturePanel = new PicturePanel(this);
-			tabbedPane.addTab("Picture viewer", picturePanel);
+			tabbedPane.addTab(BUNDLE.getString("Picture-viewer"), picturePanel);
 		}
 		tabbedPane.setSelectedComponent(picturePanel);
 	}
@@ -378,7 +378,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonFileTree() {
 		if(fileTreePanel == null) {
 			fileTreePanel = new FileTreePanel(this);
-			tabbedPane.addTab("File tree viewer", fileTreePanel);
+			tabbedPane.addTab(BUNDLE.getString("File-tree-viewer"), fileTreePanel);
 		}
 		tabbedPane.setSelectedComponent(fileTreePanel);
 	}

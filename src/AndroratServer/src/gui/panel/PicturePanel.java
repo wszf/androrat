@@ -29,8 +29,10 @@ import javax.swing.JSplitPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
+import java.util.ResourceBundle;
 
 public class PicturePanel extends JPanel {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.panel.messages"); //$NON-NLS-1$
 	
 	private JLabel imgLabel;
 	private JPanel panel;
@@ -51,7 +53,7 @@ public class PicturePanel extends JPanel {
 	public PicturePanel(UserGUI gui) {
 		this.gui = gui;
 		
-		Object[] items = {"Back camera", "Front camera"};
+		Object[] items = {BUNDLE.getString("Back-camera"), BUNDLE.getString("Front-camera")};
 		
 		splitPane = new JSplitPane();
 		splitPane.setResizeWeight(1.0);
@@ -90,7 +92,7 @@ public class PicturePanel extends JPanel {
 		});
 		
 		panel_2 = new JPanel();
-		panel_2.setBorder(new TitledBorder(null, "Options", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_2.setBorder(new TitledBorder(null, BUNDLE.getString("Options"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
@@ -112,7 +114,7 @@ public class PicturePanel extends JPanel {
 		);
 		comboBox = new JComboBox(items);
 		
-		JButton btnTakePicture = new JButton("Take Picture");
+		JButton btnTakePicture = new JButton(BUNDLE.getString("Take-Picture"));
 		btnTakePicture.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireTakePicture();
