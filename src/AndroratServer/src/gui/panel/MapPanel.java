@@ -22,8 +22,10 @@ import javax.swing.border.TitledBorder;
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
 import org.openstreetmap.gui.jmapviewer.MapMarkerDot;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapMarker;
+import java.util.ResourceBundle;
 
 public class MapPanel extends JPanel {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.panel.messages"); //$NON-NLS-1$
 	
 	private boolean streaming = false;
 	private JButton btnStopStreaming;
@@ -75,9 +77,9 @@ public class MapPanel extends JPanel {
 		splitPane.setRightComponent(panel);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "Informations", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBorder(new TitledBorder(null, BUNDLE.getString("Informations"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
-		JButton btnCenterView = new JButton("Center view");
+		JButton btnCenterView = new JButton(BUNDLE.getString("Center-view")); //$NON-NLS-1$
 		btnCenterView.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				centerMapView();
@@ -85,7 +87,7 @@ public class MapPanel extends JPanel {
 		});
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new TitledBorder(null, "Start group", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_2.setBorder(new TitledBorder(null, BUNDLE.getString("Start-group"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
@@ -109,9 +111,9 @@ public class MapPanel extends JPanel {
 					.addGap(161))
 		);
 		
-		JLabel lblProvider = new JLabel("Location provider :");
+		JLabel lblProvider = new JLabel(BUNDLE.getString("Location-provider")); //$NON-NLS-1$
 		
-		rdbtnNetwork = new JRadioButton("Network");
+		rdbtnNetwork = new JRadioButton(BUNDLE.getString("Network")); //$NON-NLS-1$
 		rdbtnNetwork.setSelected(true);
 		buttonGroup.add(rdbtnNetwork);
 		
@@ -153,27 +155,27 @@ public class MapPanel extends JPanel {
 		);
 		panel_2.setLayout(gl_panel_2);
 		
-		JLabel lblLongitude = new JLabel("Longitude :");
+		JLabel lblLongitude = new JLabel(BUNDLE.getString("Longitude")); //$NON-NLS-1$
 		
 		lblVallongitude = new JLabel("val_longitude");
 		
-		JLabel lblLatitude = new JLabel("Latitude :");
+		JLabel lblLatitude = new JLabel(BUNDLE.getString("Latitude")); //$NON-NLS-1$
 		
 		lblVallatitude = new JLabel("val_latitude");
 		
-		JLabel lblAltitude = new JLabel("Altitude :");
+		JLabel lblAltitude = new JLabel(BUNDLE.getString("Altitude")); //$NON-NLS-1$
 		
 		lblValaltitude = new JLabel("val_altitude");
 		
-		JLabel lblVitesse = new JLabel("Speed :");
+		JLabel lblVitesse = new JLabel(BUNDLE.getString("Speed")); //$NON-NLS-1$
 		
 		lblValvitesse = new JLabel("val_vitesse");
 		
-		JLabel lblPrcision = new JLabel("Accuracy :");
+		JLabel lblPrcision = new JLabel(BUNDLE.getString("Accuracy")); //$NON-NLS-1$
 		
 		lblValprecision = new JLabel("val_precision");
 		
-		JLabel lblLastData = new JLabel("Last received data :");
+		JLabel lblLastData = new JLabel(BUNDLE.getString("Last-received-data")); //$NON-NLS-1$
 		
 		lblVallastdata = new JLabel("val_last_data");
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);

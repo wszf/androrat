@@ -58,7 +58,7 @@ public class FileTreePanel extends JPanel {
 		trunk = new DefaultMutableTreeNode("sdcard");
 
 		JLabel lblLeftclicToDownload = new JLabel(
-				"Left-clic to download a file :");
+				BUNDLE.getString("Left-clic-tips"));
 
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setResizeWeight(0.9);
