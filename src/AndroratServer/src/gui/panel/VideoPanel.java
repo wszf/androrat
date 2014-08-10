@@ -33,6 +33,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import sun.management.OperatingSystemImpl;
 import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
@@ -41,16 +42,18 @@ import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
+import java.util.ResourceBundle;
 
 public class VideoPanel extends JPanel
 {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.panel.messages"); //$NON-NLS-1$
 
 	/**
 	 * The standard aspect ratios.
 	 */
 	private static final String[][] ASPECTS =
 	{
-	{ "<choose...>", null },
+	{ "<"+BUNDLE.getString("choose")+"...>", null },
 	{ "16:10", "16:10" },
 	{ "16:9", "16:9" },
 	{ "1.85:1", "185:100" },
@@ -89,7 +92,8 @@ public class VideoPanel extends JPanel
 	 */
 	public VideoPanel(UserGUI gui)
 	{
-		 NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), "D://Util/VLC");
+//		 NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), "D://Util/VLC");
+		 NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), "system/library/vlc/linux");
 			Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
 		this.gui = gui ;
 		factory = new MediaPlayerFactory("--no-video-title-show");
@@ -111,7 +115,7 @@ public class VideoPanel extends JPanel
 	    
 	    mediaPlayer.setVideoSurface(videoSurface);
 	    
-	    standardAspectLabel = new JLabel("Standard Aspect:");
+	    standardAspectLabel = new JLabel(BUNDLE.getString("Standard-Aspect")); //$NON-NLS-1$
 	    standardAspectLabel.setDisplayedMnemonic('s');
 	    
 	    standardAspectComboBox = new JComboBox(ASPECTS);
@@ -135,7 +139,7 @@ public class VideoPanel extends JPanel
 		
 		lblStop = new JLabel(reziseImage("/gui/res/gtk-media-stop.png"));
 		lblStop.setEnabled(false);
-		 btnStartStream = new JButton("Start stream");
+		 btnStartStream = new JButton(BUNDLE.getString("Start-stream")); //$NON-NLS-1$
 		
 	    controlsPane = new JPanel();
 	    controlsPane.setLayout(new BoxLayout(controlsPane, BoxLayout.X_AXIS));
@@ -157,7 +161,7 @@ public class VideoPanel extends JPanel
 	    contentPane.add(videoPane, BorderLayout.CENTER);
 	    contentPane.add(controlsPane, BorderLayout.SOUTH);
 	    //*
-	    frame = new JFrame("Video streaming");
+	    frame = new JFrame(BUNDLE.getString("Video-streaming"));
 	    frame.setContentPane(contentPane);
 	    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	    
@@ -243,7 +247,7 @@ public class VideoPanel extends JPanel
 			{
 				fout = new FileOutputStream(new File(filename));
 				gui.fireStartVideoStream();
-				btnStartStream.setText("Stop Streaming");
+				btnStartStream.setText(BUNDLE.getString("Stop-Streaming"));
 				streaming = true;
 			} catch (FileNotFoundException e)
 			{
