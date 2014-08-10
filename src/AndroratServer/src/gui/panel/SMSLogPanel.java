@@ -29,8 +29,10 @@ import javax.swing.border.TitledBorder;
 import javax.swing.text.MaskFormatter;
 
 import Packet.SMSPacket;
+import java.util.ResourceBundle;
 
 public class SMSLogPanel extends JPanel {
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.panel.messages"); //$NON-NLS-1$
 	
 	public static Color IN_SMS = new Color(14,92,7);
 	public static Color OUT_SMS = Color.blue;
@@ -51,12 +53,12 @@ public class SMSLogPanel extends JPanel {
 	public SMSLogPanel(UserGUI gui) {
 		this.gui = gui;
 		
-		JLabel lblTypes = new JLabel("Types :");
+		JLabel lblTypes = new JLabel(BUNDLE.getString("Types;")); //$NON-NLS-1$
 		
-		JLabel lblIncoming = new JLabel("received SMS");
+		JLabel lblIncoming = new JLabel(BUNDLE.getString("received-SMS")); //$NON-NLS-1$
 		lblIncoming.setForeground(IN_SMS);
 		
-		JLabel lblSent = new JLabel("sent SMS");
+		JLabel lblSent = new JLabel(BUNDLE.getString("sent-SMS")); //$NON-NLS-1$
 		lblSent.setForeground(OUT_SMS);
 		
 		JSplitPane splitPane = new JSplitPane();
@@ -98,39 +100,39 @@ public class SMSLogPanel extends JPanel {
 		
 		JPanel panel = new JPanel();
 		splitPane.setRightComponent(panel);
-		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Optionnal filters", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), BUNDLE.getString("sms-filters"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
-		JLabel lblTypeOfCall = new JLabel("Source SMS :");
+		JLabel lblTypeOfCall = new JLabel(BUNDLE.getString("Source-SMS")); //$NON-NLS-1$
 		
 		sourceBox = new JComboBox();
-		sourceBox.setModel(new DefaultComboBoxModel(new String[] {"All", "Received", "Sent"}));
+		sourceBox.setModel(new DefaultComboBoxModel(new String[] {BUNDLE.getString("All-sms"), BUNDLE.getString("received-SMS"), BUNDLE.getString("sent-SMS")}));
 		
-		JLabel lblPhoneNumber = new JLabel("Phone number :");
+		JLabel lblPhoneNumber = new JLabel(BUNDLE.getString("Phone-number")); //$NON-NLS-1$
 		
 		phoneNumberField = new JTextField();
 		phoneNumberField.setColumns(10);
 		
-		JLabel lblMinDate = new JLabel("Not before (dd/mm/yyyy)  :");
+		JLabel lblMinDate = new JLabel(BUNDLE.getString("Not-before")); //$NON-NLS-1$
 		
 		formattedMinDate = new JFormattedTextField(createFormatter("**/**/****"));
 		
-		JLabel lblNotAfter = new JLabel("Not after");
+		JLabel lblNotAfter = new JLabel(BUNDLE.getString("Not-after")); //$NON-NLS-1$
 		
 		formattedMaxDate = new JFormattedTextField(createFormatter("**/**/****"));
 		
-		JButton btnGetSMSLogs = new JButton("Get SMS");
+		JButton btnGetSMSLogs = new JButton(BUNDLE.getString("Get-SMS")); //$NON-NLS-1$
 		btnGetSMSLogs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fireGetSMS();
 			}
 		});
 		
-		JLabel lblTypeOfSms = new JLabel("Type of SMS :");
+		JLabel lblTypeOfSms = new JLabel(BUNDLE.getString("Type-of-SMS")); //$NON-NLS-1$
 		
 		typeBox = new JComboBox();
-		typeBox.setModel(new DefaultComboBoxModel(new String[] {"All", "Unread", "Read"}));
+		typeBox.setModel(new DefaultComboBoxModel(new String[] {BUNDLE.getString("All"), BUNDLE.getString("Unread"),BUNDLE.getString("Read")}));
 		
-		JLabel lblBodyKeyword = new JLabel("Body keyword :");
+		JLabel lblBodyKeyword = new JLabel(BUNDLE.getString("Body-keyword")); //$NON-NLS-1$
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		GroupLayout gl_panel = new GroupLayout(panel);
