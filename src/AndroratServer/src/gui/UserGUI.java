@@ -418,7 +418,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonStreamingVideo() {
 		if(videoPanel == null) {
 			videoPanel = new VideoPanel(this);
-			tabbedPane.addTab(BUNDLE.getString("Video player"), videoPanel);
+			tabbedPane.addTab(BUNDLE.getString("Video-player"), videoPanel);
 		}
 		tabbedPane.setSelectedComponent(videoPanel);
 	}
@@ -426,7 +426,7 @@ public class UserGUI extends JFrame implements WindowListener {
 	private void fireButtonSMS() {
 		if(smsPanel == null) {
 			smsPanel = new SMSLogPanel(this);
-			tabbedPane.addTab(BUNDLE.getString("SMS viewer"), smsPanel);
+			tabbedPane.addTab(BUNDLE.getString("SMS-viewer"), smsPanel);
 		}
 		tabbedPane.setSelectedComponent(smsPanel);
 	}
