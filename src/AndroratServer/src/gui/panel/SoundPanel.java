@@ -27,9 +27,10 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.TitledBorder;
 
 import utils.wavIO;
+import java.util.ResourceBundle;
 
 public class SoundPanel extends JPanel {
-	
+	private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("gui.panel.messages"); //$NON-NLS-1$
 	private UserGUI gui;
 	private SourceDataLine dataLine;
 	private boolean streaming;
@@ -56,10 +57,10 @@ public class SoundPanel extends JPanel {
 		this.gui = gui;
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "Streaming options", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(null,BUNDLE.getString("Streaming-options"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "Informations", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBorder(new TitledBorder(null, BUNDLE.getString("Informations"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
@@ -80,13 +81,13 @@ public class SoundPanel extends JPanel {
 					.addContainerGap(26, Short.MAX_VALUE))
 		);
 		
-		JLabel lblSampleRate = new JLabel("Sample rate : ");
+		JLabel lblSampleRate = new JLabel(BUNDLE.getString("Sample-rate")); //$NON-NLS-1$
 		
-		JLabel lblSampleSizeBits = new JLabel("Sample size bits :");
+		JLabel lblSampleSizeBits = new JLabel(BUNDLE.getString("Sample-size-bits")); //$NON-NLS-1$
 		
-		JLabel lblChannels = new JLabel("Channels :");
+		JLabel lblChannels = new JLabel(BUNDLE.getString("Channels")); //$NON-NLS-1$
 		
-		JLabel lblSigned = new JLabel("Signed :");
+		JLabel lblSigned = new JLabel(BUNDLE.getString("Signed")); //$NON-NLS-1$
 		
 		JLabel lblValrate = new JLabel("val_rate");
 		
@@ -163,9 +164,9 @@ public class SoundPanel extends JPanel {
 		panel_1.setLayout(gl_panel_1);
 		setLayout(groupLayout);
 		
-		lblCaptureSource = new JLabel("Capture source :");
+		lblCaptureSource = new JLabel(BUNDLE.getString("Capture-source")); //$NON-NLS-1$
 		
-		Object[] items = {"Microphone", "Voice call (up & down)", "Up voice call", "Down voice call"};
+		Object[] items = {BUNDLE.getString("Microphone"), BUNDLE.getString("Voice-call"), BUNDLE.getString("Up-voice-call"), BUNDLE.getString("Down-voice-call")};
 		comboBox = new JComboBox(items);
 		
 		getImg = reziseImage("/gui/res/gtk-media-play-ltr.png");
@@ -264,9 +265,9 @@ public class SoundPanel extends JPanel {
 	private void fireButtonStartStream() {
 		streaming = true;
 		int choice = Protocol.ARG_STREAM_AUDIO_MIC;
-		if(comboBox.getSelectedItem().equals("Voice call (up & down)")) choice = Protocol.ARG_STREAM_AUDIO_UPDOWN_CALL;
-		else if(comboBox.getSelectedItem().equals("Up voice call")) choice = Protocol.ARG_STREAM_AUDIO_UP_CALL;
-		else if(comboBox.getSelectedItem().equals("Down voice call")) choice = Protocol.ARG_STREAM_AUDIO_DOWN_CALL;
+		if(comboBox.getSelectedItem().equals(BUNDLE.getString("Voice-call"))) choice = Protocol.ARG_STREAM_AUDIO_UPDOWN_CALL;
+		else if(comboBox.getSelectedItem().equals(BUNDLE.getString("Up-voice-call"))) choice = Protocol.ARG_STREAM_AUDIO_UP_CALL;
+		else if(comboBox.getSelectedItem().equals(BUNDLE.getString("Down-voice-call"))) choice = Protocol.ARG_STREAM_AUDIO_DOWN_CALL;
 		
 		//System.out.println("Envoi demande enregistrement, choix : "+((String)comboBox.getSelectedItem())+ " num="+choice);
 		lblStart.setEnabled(false);
