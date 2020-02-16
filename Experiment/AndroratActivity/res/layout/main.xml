@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+<ScrollView
+	android:id="@+id/scrollview1"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:text="IP : " />
+        <EditText android:id="@+id/ipfield"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:text="192.168.0.12"
+        />
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" android:text="Port : ">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:text="Port : "/>
+        <EditText android:id="@+id/portfield"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:text="9999"
+            />
+    </LinearLayout>
+	-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+  <SurfaceView
+    android:id="@+id/camera_preview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    />
+
+     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    
+           <EditText android:id="@+id/ipfield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="192.168.1.100"
+        />
+       <EditText android:id="@+id/portfield"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="9999"
+       />
+	  <Button
+	    android:id="@+id/button_capture"
+	    android:text="Start"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    />
+  </LinearLayout>
+</LinearLayout><!-- 
+</ScrollView>-->
