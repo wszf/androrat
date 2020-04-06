@@ -84,3 +84,4 @@ ant.properties
 /.idea/
 /build
 *.iml
+/config.txt
