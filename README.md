@@ -68,7 +68,7 @@ The two screenshots below shows two others tabs for two functionalities which ar
 
 Use Notes
 
-* You will need the Android SDK and Eclipse to compile this project.
+* You'll need Android Studio 3.6.2 or later imported to compile this project.
 * Command & Control Application is cross platform Java, tested fine on OSX, Linux and Windows
 * You need to edit /src/Androrat/src/my/app/client/LauncherActivity.java before compiling the APK.
 * This is where you hardcode the listeners IP and Port. You can use an IP, or a domain name like a dyndns.
