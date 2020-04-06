@@ -5,7 +5,11 @@ sourceSets {
     test.java.srcDirs = ['tests/java']
     test.resources.srcDirs = ['tests/resources']
 }
-
+jar{
+    manifest{
+        attributes 'Main-Class':'server.Server'
+    }
+}
 dependencies {
-    compile fileTree(include: '*.jar', dir: 'libs')
+    implementation fileTree(include: '*.jar', dir: 'libs')
 }
