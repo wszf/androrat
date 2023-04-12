@@ -1,0 +1,15 @@
+apply plugin: 'java'
+sourceSets {
+    main.java.srcDirs = ['src', 'inout']
+    main.resources.srcDirs = ['src', 'inout']
+    test.java.srcDirs = ['tests/java']
+    test.resources.srcDirs = ['tests/resources']
+}
+jar{
+    manifest{
+        attributes 'Main-Class':'server.Server'
+    }
+}
+dependencies {
+    implementation fileTree(include: '*.jar', dir: 'libs')
+}
